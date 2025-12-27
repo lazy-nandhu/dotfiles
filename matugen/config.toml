@@ -1,0 +1,31 @@
+[config.wallpaper]
+command = "awww"
+arguments = ["img"]
+set = true
+
+[templates.mango]
+input_path = "~/.config/matugen/templates/mango-colors.conf"
+output_path = "~/.config/mango/colors.conf"
+post_hook = "mmsg -d reload_config"
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/kitty/colors.conf"
+
+[templates.foot]
+input_path = "~/.config/matugen/templates/foot-colors.ini"
+output_path = "~/.config/foot/colors.ini"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava-colors.ini"
+output_path = "~/.config/cava/themes/colors"
+
+[templates.rofi]
+input_path = "~/.config/matugen/templates/rofi-colors.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+

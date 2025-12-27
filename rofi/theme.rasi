@@ -1,0 +1,70 @@
+@import "colors.rasi"
+
+* {
+    font: "Montserrat Medium 12";
+    background-color: @surface-container-low;
+    text-color: @on-surface;
+
+    border: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    background-color: @surface-container-low;
+    border-radius: 0;
+    border: 2px;
+    border-color: @primary;
+    padding: 30px;
+}
+
+inputbar {
+    padding:20px;
+    background-color: @surface-container-low;
+    text-color: @on-surface;
+    children: ["textbox-prompt", "entry"];
+}
+
+textbox-prompt {
+    content: "Apps : ";
+    expand: false;
+    color: @primary;
+}
+prompt {
+    text-color: @primary;
+}
+entry {
+    text-color: @on-surface;
+    background-color: @surface-container-low;
+    placeholder: "Type to filer...";
+}
+
+listview {
+    border: 0;
+    scrollbar: false;
+    cycle: true;
+    lines: 8;
+    spacing: 10;
+    background-color: @surface-container-low;
+}
+
+element {
+    padding: 11px 20px;
+    border-radius: 5;
+    spacing: 10;
+    text-color: red;
+}
+
+element-text {
+    text-color: @on-surface-variant;
+}
+
+element.normal.normal, element.alternate.normal {
+    background-color: @surface-container-low;
+}
+element.selected.normal {
+    background-color: @primary-container;
+    text-color: @on-primary-container;
+}
+
+

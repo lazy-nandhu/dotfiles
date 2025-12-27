@@ -1,0 +1,56 @@
+## Configuration file for CAVA.
+# Remove the ; to change parameters.
+
+
+[general]
+
+# ... (general settings remain unchanged)
+framerate = 144
+
+# ... (input settings remain unchanged)
+# ... (output settings remain unchanged)
+
+
+[color]
+
+# Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
+# Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
+# a terminal that can change color definitions such as Gnome-terminal or rxvt.
+# default is to keep current terminal color
+; background = default
+; foreground = default
+
+# SDL and sdl_glsl only support hex code colors, these are the default:
+; background = '#111111'
+; foreground = '#33ffff'
+
+
+# We are now using the CAVA theme feature to load Matugen colors.
+; gradient = 1
+; gradient_color_1 = '#59cc33'
+; ... (All gradient colors removed)
+; gradient_color_8 = '#cc3333'
+
+; horizontal_gradient = 1 
+; horizontal_gradient_color_1 = '#c45161'
+; ... (All horizontal gradient colors removed)
+; horizontal_gradient_color_8 = '#434279'
+
+
+# If both vertical and horizontal gradient is enabled, vertical will be blended in this direction.
+# Can be 'up', 'down', 'left' or 'right'. 'up' means the vertical gradient will be blended in from
+# bottom to top. I.e. the bottom will be only the horizontal
+# and top will be only the color of the vertical gradient.
+; blend_direction = 'up'
+
+# USE MATUGEN THEME INSTEAD
+# themes are located in $HOME/.config/cava/themes
+theme = 'colors'
+
+
+[smoothing]
+# ... (smoothing settings remain unchanged)
+
+
+[eq]
+# ... (eq settings remain unchanged)

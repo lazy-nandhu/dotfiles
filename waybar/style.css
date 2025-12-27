@@ -1,0 +1,150 @@
+@import url("colors.css");
+
+/* Resetting global properties without applying backgrounds to invisible containers */
+* {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: alpha(@surface_container_low, 0.7);
+}
+
+.modules-left {
+    margin-left: 0px;
+}
+
+/* Ensure the container itself has no extra offset */
+.modules-right {
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+#workspaces button, 
+#ext-workspaces button {
+    all: initial;
+    padding: 5px;
+    margin: 0;
+    min-width: 15px;
+    color: @on_surface_variant;
+}
+
+#workspaces button.active,
+#ext-workspaces button.active {
+    color: @on_primary_container;
+    background-color: @primary_container;
+    border-radius: 3px;
+    min-width: 30px;
+
+    min-width: 30px;
+}
+
+#workspaces button.empty,
+#hyprland-workspaces button.empty {
+    opacity: 0.5;
+    color: @outline;
+}
+
+#workspaces {
+	padding:0px; /* [x] */
+}
+
+/* Base style for modules */
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#clock {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    padding: 0 10px;
+    margin: 0 3px; /* This 3px on the right was causing your gap */
+    border-radius: 3px;
+}
+
+/* FIX: Force the very last module on the right to have 0 right margin */
+.modules-right > widget:last-child > #battery,
+.modules-right > widget:last-child > #clock,
+.modules-right > widget:last-child > #pulseaudio {
+    margin-right: 0px;
+}
+
+#battery,
+#pulseaudio {
+    min-width: 20px;
+}
+
+#clock {
+    padding: 0 30px;
+}
+
+tooltip {
+    padding: 2px;
+    background: @surface_container_highest;
+    color: @on_surface;
+    border-radius: 5px;
+    border: 1px solid @outline;
+}
+
+#battery {
+    background-color: @primary_container;
+    min-width: 35px;
+}
+
+#battery.warning {
+    color: @error;
+    background-color: @error_container;
+}
+
+#battery.critical {
+    color: @on_error;
+    background-color: @error;
+}
+
+#battery.charging {
+    color: @on_primary_fixed;
+    background-color: @tertiary;
+}
+
+#network.linked, #network.ethernet {
+    color: @tertiary;
+}
+
+#bluetooth.connected {
+    background-color: @primary_container;
+}
+
+#network.wifi, #network.ethernet {
+    background: @primary_container;
+}
+
+#pulseaudio {
+    background-color: @primary_container;
+}
+
+#pulseaudio.zero-volume {
+    background-color: red;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#pulseaudio,
+#network {
+    padding-right: 15px;
+}
+
+#bluetooth,
+#network,
+#pulseaudio,
+#ext-workspaces,
+#battery {
+    min-width: 30px;
+}

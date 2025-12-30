@@ -7,7 +7,7 @@ from os.path import join, expanduser
 # Note: Using "~/.wallpapers" is generally safer than "./.wallpapers" 
 # if you intend the path to always be in your home directory.
 # We will construct the absolute path below.
-relative_path = "/home/nandhu/.wallpapers"
+relative_path = "/home/nandhu/.wallpapers/jpg"
 wallpapers = []
 
 print(f"Scanning directory: {relative_path}")
@@ -41,7 +41,7 @@ print(f"Selected file: {selected_filename}")
 # We need the path that 'matugen' can actually use, which should be absolute.
 # We join the intended *base* path with the filename.
 # The original used "~/.wallpapers", so let's construct a reliable path using join()
-base_path = "~/.wallpapers"
+base_path = "~/.wallpapers/jpg"
 wallpaper_path = join(base_path, selected_filename)
 
 # Expand the '~' to the full home directory path, which is crucial 

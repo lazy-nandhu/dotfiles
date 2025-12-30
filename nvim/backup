@@ -1,0 +1,49 @@
+-- 1. General Settings
+vim.opt.number = true            -- Show line numbers
+vim.opt.relativenumber = true    -- Enable relative line numbers
+vim.g.mapleader = " "            -- Set space as leader key
+
+-- 2. Keybindings
+-- Disable arrow keys (Normal, Insert, and Visual modes)
+local modes = { 'n', 'i', 'v' }
+local keys = { '<Up>', '<Down>', '<Left>', '<Right>' }
+
+for _, mode in ipairs(modes) do
+  for _, key in ipairs(keys) do
+    vim.keymap.set(mode, key, '<nop>')
+  end
+end
+
+-- Open default file explorer (Netrw)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+
+-- 3. Plugin Management (using 'lazy.nvim')
+-- This handles the colorscheme and syntax highlighting
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  -- Rose-pine colorscheme
+  { "rose-pine/neovim", name = "rose-pine" },
+
+  -- Treesitter for syntax highlighting (C, Bash, QML)
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { "c", "bash", "qml", "lua" },
+        highlight = { enable = true },
+      })
+    end
+  },
+})
+
+-- 4. Set Colorscheme
+vim.cmd("colorscheme rose-pine")

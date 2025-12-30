@@ -1,0 +1,22 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    "break",
+    "os",
+    "host",
+    "kernel",
+    "packages",
+    "shell",
+    "terminal",
+    "wm",
+    "memory",
+    "disk",
+    "battery",
+    {
+	"type": "command",
+	"key": "Age",
+	"text": "today=$(date +%s);bday=$(cat /etc/days);diff_days=$(($today-$bday));age=$(($diff_days/86400));echo $age days"
+    },
+    "break"
+  ]
+}

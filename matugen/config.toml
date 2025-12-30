@@ -1,6 +1,6 @@
 [config.wallpaper]
 command = "awww"
-arguments = ["img"]
+arguments = ["img", "--transition-type", "random", "--transition-fps", "144"]
 set = true
 
 [templates.mango]

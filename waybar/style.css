@@ -59,8 +59,7 @@ window#waybar {
 #battery,
 #pulseaudio,
 #network,
-#bluetooth,
-#clock {
+#bluetooth {
     background-color: @surface_container_high;
     color: @on_surface;
     padding: 0 10px;
@@ -129,7 +128,7 @@ tooltip {
 }
 
 #pulseaudio.zero-volume {
-    background-color: red;
+    background-color: @on_error;
 }
 
 .hidden {
@@ -148,3 +147,5 @@ tooltip {
 #battery {
     min-width: 30px;
 }
+
+
